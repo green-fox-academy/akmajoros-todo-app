@@ -12,7 +12,9 @@ public class App {
         Path filePath = Paths.get("PrintUsage.txt");
         try {
           List<String> lines = Files.readAllLines(filePath);
-          System.out.println(lines);
+          for (int i = 0; i < lines.size(); i++) {
+            System.out.println(lines.get(i));
+          }
         } catch (Exception e) {
           e.printStackTrace();
           System.out.println("Uh-oh, could not read the file!");
