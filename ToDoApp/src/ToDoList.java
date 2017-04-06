@@ -38,7 +38,7 @@ public class ToDoList {
     List<String> content;
     try {
       content = Files.readAllLines(filePath);
-      content.add(content.size(), args[1]);
+      content.add(content.size(), "[ ] " + args[1]);
       Files.write(filePath, content);
     } catch (Exception e) {
       e.printStackTrace();

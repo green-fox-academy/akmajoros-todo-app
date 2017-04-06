@@ -9,12 +9,13 @@ public class App {
     public static void main(String[] args) {
 
       ToDoList toDoList = new ToDoList();
+      ToDo toDo = new ToDo();
 
       if (args.length == 0) {
         toDoList.printUsage();
       }
 
-      if (args.length > 0 && Arrays.toString(args).contains("-l")) {
+      if (Arrays.toString(args).contains("-l")) {
         toDoList.printToDo();
       }
 
@@ -24,6 +25,10 @@ public class App {
 
       if (Arrays.toString(args).contains("-r")) {
         toDoList.removeToDo(args);
+      }
+
+      if (Arrays.toString(args).contains("-c")) {
+        toDo.checkToDo(args);
       }
     }
 }
