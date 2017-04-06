@@ -17,5 +17,9 @@ public class App {
       if (args.length > 0 && Arrays.toString(args).contains("-l")) {
         toDoList.printToDo();
       }
+
+      if (Arrays.toString(args).contains("-a")) {
+        toDoList.addToDo(args);
+      }
     }
 }
