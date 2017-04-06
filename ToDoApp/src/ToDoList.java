@@ -44,4 +44,16 @@ public class ToDoList {
       e.printStackTrace();
     }
   }
+
+  public void removeToDo(String[] args){
+    Path filePath = Paths.get("list.txt");
+    List<String> content;
+    try {
+      content = Files.readAllLines(filePath);
+      content.remove(Integer.parseInt(args[1]) - 1);
+      Files.write(filePath, content);
+    } catch (Exception e){
+      e.printStackTrace();
+    }
+  }
 }

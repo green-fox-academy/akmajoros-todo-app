@@ -21,5 +21,9 @@ public class App {
       if (Arrays.toString(args).contains("-a")) {
         toDoList.addToDo(args);
       }
+
+      if (Arrays.toString(args).contains("-r")) {
+        toDoList.removeToDo(args);
+      }
     }
 }
