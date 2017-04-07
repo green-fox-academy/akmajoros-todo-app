@@ -55,10 +55,14 @@ public class ToDoList {
     try {
       content = Files.readAllLines(filePath);
       if (args.length == 1){
-        System.out.println();
+        System.out.println("Unable to remove: no index provided");
+      } else if (Integer.parseInt(args[1]) > content.size()){
+        System.out.println("Unable to remove: index out of bound");
+      } else if (Integer.parseInt((args[1]) ){
+      } else {
+        content.remove(Integer.parseInt(args[1]) - 1);
+        Files.write(filePath, content);
       }
-      content.remove(Integer.parseInt(args[1]) - 1);
-      Files.write(filePath, content);
     } catch (Exception e){
       e.printStackTrace();
     }
