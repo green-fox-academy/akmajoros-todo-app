@@ -54,6 +54,9 @@ public class ToDoList {
     List<String> content;
     try {
       content = Files.readAllLines(filePath);
+      if (args.length == 1){
+        System.out.println();
+      }
       content.remove(Integer.parseInt(args[1]) - 1);
       Files.write(filePath, content);
     } catch (Exception e){

@@ -13,21 +13,15 @@ public class App {
 
       if (args.length == 0) {
         toDoList.printUsage();
-      }
-
-      if (Arrays.toString(args).contains("-l")) {
+      } else if (args.length > 0 && args[0].charAt(0) != '-'){
+        System.out.println("Unsupported argument");
+      } else if (args[0].contains("-l")) {
         toDoList.printToDo();
-      }
-
-      if (Arrays.toString(args).contains("-a")) {
+      } else if (args[0].contains("-a")) {
         toDoList.addToDo(args);
-      }
-
-      if (Arrays.toString(args).contains("-r")) {
+      } else if (args[0].contains("-r")) {
         toDoList.removeToDo(args);
-      }
-
-      if (Arrays.toString(args).contains("-c")) {
+      } else if (args[0].contains("-c")) {
         toDo.checkToDo(args);
       }
     }
