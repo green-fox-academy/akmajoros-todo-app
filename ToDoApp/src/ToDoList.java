@@ -38,8 +38,12 @@ public class ToDoList {
     List<String> content;
     try {
       content = Files.readAllLines(filePath);
-      content.add(content.size(), "[ ] " + args[1]);
-      Files.write(filePath, content);
+      if (args.length == 1) {
+        System.out.println("Unable to add: no task provided");
+      } else {
+        content.add(content.size(), "[ ] " + args[1]);
+        Files.write(filePath, content);
+      }
     } catch (Exception e) {
       e.printStackTrace();
     }
